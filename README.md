@@ -22,9 +22,9 @@ Get the SHA512 fingerprint by running a temporary container with volumes from th
 
 ### Connect to ZNC using SSL:
 
-    /server add <server-nickname> <docker_host>/6697 -ssl -username=<username>/<network> -password=<password> -autoconnect
+    /server add <server_nick> <docker_host>/6697 -ssl -username=<username>/<network> -password=<password> -autoconnect
 
-    /set irc.server.<network>.ssl_fingerprint <SHA512_fingerprint>
+    /set irc.server.<server_nick>.ssl_fingerprint <SHA512_fingerprint>
 
     /connect znc
 
