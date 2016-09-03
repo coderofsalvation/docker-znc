@@ -26,7 +26,7 @@ Get the SHA512 fingerprint by running a temporary container with volumes from th
 
     /set irc.server.<server_nick>.ssl_fingerprint <SHA512_fingerprint>
 
-    /connect znc
+    /connect <server_nick>
 
     /save
 
