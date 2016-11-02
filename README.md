@@ -6,11 +6,12 @@ IRC bouncer based on Alpine Linux
 
 Run makeconf to initialize znc settings in a persistent docker volume:
 
-    docker run --rm -it -v znc:/znc mantlepro/znc --makeconf --datadir /znc
+    mkdir znc bitlbee
+    docker run --rm -it -v $(pwd)/znc:/znc znc --makeconf --datadir /znc
 
 Choose port 6697 and https when prompted. Once the initial configuration is complete, run your znc server:
 
-    docker run -it -d --name znc -v znc:/znc -p 6697:6697 mantlepro/znc
+    docker run -it -d --name znc -v $(pwd)/boot:/boot -v $(pwd)/bitlbee:/bitlbee -v $(pwd)/znc:/znc -p 6697:6697 znc
 
 Log into your znc container at https://localhost:6697 using the username and password chosen during setup. If logging into znc from a different machine outside of localhost, open port 6697 on the host machine.
 

@@ -1,7 +1,7 @@
 FROM alpine
 MAINTAINER Josh Wheeler <mantlepro@gmail.com>
-RUN apk add --update znc znc-extra znc-modperl znc-modpython znc-modtcl ca-certificates && rm -rf /var/cache/apk/*
+RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories
+RUN apk add --update bitlbee bitlbee-facebook@testing znc znc-extra znc-modperl znc-modtcl ca-certificates && rm -rf /var/cache/apk/*
 RUN mkdir /znc && chown -R znc:znc /znc
 USER znc
-ENTRYPOINT ["znc"]
-CMD ["--foreground", "--datadir", "/znc"]
+CMD ["/boot"]
